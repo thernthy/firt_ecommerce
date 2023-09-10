@@ -1,12 +1,12 @@
 <header class="masthead">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <!-- <div class="col-sm-6">
                     <h1><a href="#" title="Bootstrap Template">Happy Scroll</a>
                         <p class="lead">{A Bootstrap Template}</p>
                     </h1>
-                </div>
-                <div class="col-sm-6">
+                </div> -->
+                <!-- <div class="col-sm-6">
                     <div class="pull-right  hidden-xs">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <h3><i class="glyphicon glyphicon-cog"></i></h3>
@@ -18,6 +18,13 @@
                             <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Link</a></li>
                         </ul>
                     </div>
+                </div> -->
+                <div class="col-sm-12">
+                    <h1 id="logo" class="h1">
+                        <a href="{{ url('/') }}" rel="index">
+                            <img src="{{ asset('img/zerow_logo_white.png') }}" alt="zerow logo">
+                        </a>
+                    </h1>
                 </div>
             </div>
         </div>

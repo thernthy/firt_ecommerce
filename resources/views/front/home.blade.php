@@ -224,7 +224,7 @@
     <!--/container-->
 
 </div>
-<!--/wrap-->
+<!--/wrap-->≈
 @endsection
 
 @push('scripts')

@@ -58,7 +58,7 @@ h1,h2,h3,h4 {
 }
 
 header {
-  background: #f16251;
+  background: #CDD9C5;
   height:550px;
   color:#000000;
 }
@@ -214,4 +214,26 @@ section {
 .bg-4 {
 	padding-top:30px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
+}
+
+/* ---------- */
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  margin: 172px 0 0px -189px;
+}
+
+@media only screen and (max-width: 766px) {
+  /* For tablets: */
+  #logo {
+    margin: 5px auto !important;
+    position: initial;
+    text-align: center;
+  }
+  #logo img {
+    height: 80px;
+  }
 }
