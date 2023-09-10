@@ -59,6 +59,8 @@ h1,h2,h3,h4 {
 
 header {
   background: #CDD9C5;
+  /* background: url('../img/forest.jpg') no-repeat center center fixed;  */
+
   height:550px;
   color:#000000;
 }
@@ -92,6 +94,8 @@ h1 {
   width: 100%;
   position:static;
   top:-32px;
+  /* background: url('../img/nav.png') center center fixed;  */
+  background: #fff;
 }
 
 #nav.affix {
@@ -116,16 +120,15 @@ h1 {
   
 /* customize nav style */
 .navbar-custom {
-    background-color: #2e2e2e;
-	font-weight:700;
-    text-transform:uppercase;
-    border-width:0;
+  background-color: #2e2e2e;
+  font-weight:700;
+  border-width:0;
 }
 .navbar-custom  .navbar-nav>li>a {
-	color: #ddd;
+	color: #281e1e;
 }
 .navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
-	background-color: #000;
+	background-color: #6d7a71;
 }
 .navbar-custom .dropdown-menu{
 	right:0;
@@ -169,13 +172,13 @@ h1 {
    bottom:0;
    right:6%;
    z-index:100;
-   background: #ffcc33;
+   background: #6D7A71;
    font-size:24px;
    border-top-left-radius:3px;
    border-top-right-radius:3px;
 }
 .scroll-top a:link,.scroll-top a:visited {
-  color:#222;
+  color:#fff;
 } 
  
 
@@ -214,6 +217,19 @@ section {
 .bg-4 {
 	padding-top:30px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
+}
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+  color: #fff;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+  text-decoration: none;
+  background-color: #91a28b;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+  background: #91a28b;
 }
 
 /* ---------- */

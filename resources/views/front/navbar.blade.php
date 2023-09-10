@@ -44,19 +44,17 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav nav-justified">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#section2">Product</a></li>
-                    <li><a href="#section3">News</a></li>
-                    <li class="active"><a href="#section1"><strong>Big Brand</strong></a></li>
+                    <li><a href="#section2">Services</a></li>
+                    <li><a href="#section3">Our Works</a></li>
+                    <li class="active"><a href="#section1"><strong>What We Do</strong></a></li>
                     <li><a href="#section4">About</a></li>
-                    <li><a href="#section5">Contact</a></li>
+                    <!-- <li><a href="#section5">Contact</a></li> -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <li><a href="#">Zerow Station</a></li>
+                            <li><a href="#">Craft</a></li>
+                            <li><a href="#">Art</a></li>
                         </ul>
                     </li>
                 </ul>
