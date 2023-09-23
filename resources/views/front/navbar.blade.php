@@ -57,6 +57,18 @@
                             <li><a href="#">Art</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#Login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">register</a>
+                    </li>
+                    <li>
+                        <div class="user_profile">
+                            <span></span>
+                            <img src="{{ asset('img/user_avertar.jpg')}}" alt="">
+                        </div>
+                    </li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
