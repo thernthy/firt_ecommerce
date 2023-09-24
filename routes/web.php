@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@home')->middleware('auth', 'verified');
+Route::get('/catagory', 'AdminCatagoryController@catagory');
+Route::get('/catagory/createCatagory', 'AdminCatagoryController@createCatagory');
 
 // Route::get('/about', 'HomeController@about');
 // Route::get('/contact', 'HomeController@contact');

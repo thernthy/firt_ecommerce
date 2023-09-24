@@ -17,7 +17,6 @@ class HomeController extends Controller
     // {
     //     $this->middleware('auth');
     // }
-
     /**
      * Show the application dashboard.
      *
@@ -29,10 +28,9 @@ class HomeController extends Controller
     }
     public function home()
     {
-
       $userType = Auth::user()->user_type;
       if ($userType == 1) {
-         return "Hello Admin";
+         return view('admin_dashboard.home');
         } else {
           return view('front.home');
         }

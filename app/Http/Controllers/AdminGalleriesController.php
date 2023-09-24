@@ -1,14 +1,10 @@
 <?php namespace App\Http\Controllers;
-
 	use Session;
 	use Request;
 	use DB;
 	use CRUDBooster;
-
 	class AdminGalleriesController extends \crocodicstudio\crudbooster\controllers\CBController {
-
 	    public function cbInit() {
-
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "title";
 			$this->limit = "20";
@@ -340,5 +336,6 @@
 
 	    //By the way, you can still create your own method in here... :) 
 
+	
 
 	}
