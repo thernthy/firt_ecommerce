@@ -57,18 +57,27 @@
                             <li><a href="#">Art</a></li>
                         </ul>
                     </li>
+                    @if(!Auth::user())
                     <li>
-                        <a href="#Login">Login</a>
+                        <a href="{{url('login')}}">Login</a>
                     </li>
                     <li>
-                        <a href="#register">register</a>
+                        <a href="{{ url('register')}}">register</a>
                     </li>
+                    @else
                     <li>
                         <div class="user_profile">
                             <span></span>
                             <img src="{{ asset('img/user_avertar.jpg')}}" alt="">
                         </div>
                     </li>
+                    <li>
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button type="submit">Log Out</button>
+                        </form>
+                    </li>
+                    @endif
                 </ul>
             </div>
             <!--/.nav-collapse -->

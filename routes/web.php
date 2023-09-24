@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,27 +17,29 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // })->where('any', '.*');
 
-Route::get('/', function () {
-    return redirect('/');
-});
 
 Route::get('/', 'HomeController@index');
-Route::get('/about', 'HomeController@about');
-Route::get('/contact', 'HomeController@contact');
-Route::get('/join-us', 'HomeController@joinus');
+Route::get('/home', 'HomeController@home')->middleware('auth', 'verified');
 
-// ------------------------------
-Route::get('/privacy-policy', 'HomeController@privacy');
-Route::get('/community-tourism', 'HomeController@communityTourism');
-Route::get('/trust-member', 'HomeController@trustMember');
-Route::get('/ticket', 'HomeController@ticket');
-// ------------------------------
+// Route::get('/about', 'HomeController@about');
+// Route::get('/contact', 'HomeController@contact');
+// Route::get('/join-us', 'HomeController@joinus');
 
-Route::get('/activity/{slug}', 'HomeController@activity');
-Route::get('/action/{slug}', 'HomeController@action');
-Route::get('/keyword/{slug}', 'HomeController@keyword');
+// // ------------------------------
+// Route::get('/privacy-policy', 'HomeController@privacy');
+// Route::get('/community-tourism', 'HomeController@communityTourism');
+// Route::get('/trust-member', 'HomeController@trustMember');
+// Route::get('/ticket', 'HomeController@ticket');
+// // ------------------------------
 
-Route::get('/countries/{slug}', 'HomeController@countries');
-Route::get('/story/{slug}', 'HomeController@story');
+// Route::get('/activity/{slug}', 'HomeController@activity');
+// Route::get('/action/{slug}', 'HomeController@action');
+// Route::get('/keyword/{slug}', 'HomeController@keyword');
 
-Route::get('/api-countries', 'HomeController@apiCountries');
+// Route::get('/countries/{slug}', 'HomeController@countries');
+// Route::get('/story/{slug}', 'HomeController@story');
+
+// Route::get('/api-countries', 'HomeController@apiCountries');
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

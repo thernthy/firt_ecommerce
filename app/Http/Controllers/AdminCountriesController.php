@@ -314,7 +314,6 @@
 				->select('title')
 				->where('id', $id)
 				->first();
-
 			$result = DB::table('countries')
 				->where('id', $id)
 				->update(
