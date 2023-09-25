@@ -20,7 +20,6 @@ class Catagory extends Migration
             $table->string('catagory_description');
             $table->timestamps();
         });
-        return redirect()->back('message', 'catagory add done');
     }
     /**
      * Reverse the migrations.

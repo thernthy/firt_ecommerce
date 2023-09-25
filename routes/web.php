@@ -29,6 +29,7 @@ Route::get('catagory/delete/{id}', 'AdminCatagoryController@deleteCatagory');
 Route::get('/products', 'productController@products')->name('products.Index');
 Route::get('/product/view', 'productController@productsView')->name('product.view');
 Route::get('/product/add', 'productController@addProduct');
+Route::post('add/product', 'productController@postProduct')->name('addProduct');
 
 // Route::get('/about', 'HomeController@about');
 // Route::get('/contact', 'HomeController@contact');
