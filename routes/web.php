@@ -1,5 +1,6 @@
 <?php
 
+use Doctrine\DBAL\Schema\Index;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -20,10 +21,14 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@home')->middleware('auth', 'verified');
-Route::get('/catagory', 'AdminCatagoryController@catagory');
+Route::get('/catagory', 'AdminCatagoryController@catagory')->name('catagory.index');
 Route::get('/catagory/createCatagory', 'AdminCatagoryController@createCatagory');
-Route::get('/products', 'AdminController@products');
-Route::get('/product/view', 'AdminController@productsView');
+Route::post('addCatagory', 'AdminCatagoryController@addCatagory')->name('addCatagory');
+Route::get('/catagory/edite/{id}', 'AdminCatagoryController@viewEdit')->name('catagory.edit');
+Route::get('catagory/delete/{id}', 'AdminCatagoryController@deleteCatagory');
+Route::get('/products', 'productController@products')->name('products.Index');
+Route::get('/product/view', 'productController@productsView')->name('product.view');
+Route::get('/product/add', 'productController@addProduct');
 
 // Route::get('/about', 'HomeController@about');
 // Route::get('/contact', 'HomeController@contact');
