@@ -6,12 +6,9 @@
 @section('content')
 <!-- Wrap all page content here -->
 <div id="wrap">
-
 @include('front.navbar')
-
     <!-- Begin page content -->
     <div class="divider" id="section1"></div>
-
     <div class="container">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="page-header text-center">
@@ -31,15 +28,12 @@
             </p>
         </div>
     </div>
-
     <div class="divider" id="section2"></div>
-
     <section class="bg-1">
         <div class="col-sm-6 col-sm-offset-3 text-center">
             <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Try and Tweak Different Layouts</h2>
         </div>
     </section>
-
     <div class="divider"></div>
 
     <div class="container" id="section3">
@@ -54,27 +48,21 @@
             </p>
 
             <hr>
-
             <img src="/assets/example/bg_smartphones.jpg" class="img-responsive">
-
             <hr>
         </div>
         <!--/col-->
     </div>
     <!--/container-->
-
     <div class="divider"></div>
-
     <section class="bg-3" id="section4">
         <div class="col-sm-6 col-sm-offset-3 text-center">
             <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Leverage Snippets &amp; Examples</h2>
         </div>
     </section>
-
     <div class="continer bg-4">
         <div class="row">
             <div class="col-sm-4 col-xs-6">
-
                 <div class="panel panel-default">
                     <div><img src="//placehold.it/450X250/565656/eee" class="img-responsive"></div>
                     <div class="panel-body">
@@ -90,16 +78,13 @@
                 <!--/panel-->
             </div>
             <!--/col-->
-
             <div class="col-sm-4 col-xs-6">
-
                 <div class="panel panel-default">
                     <div class="panel-thumbnail"><img src="//placehold.it/450X250/ffcc33/444" class="img-responsive">
                     </div>
                     <div class="panel-body">
                         <p class="lead">Bootstrap Templates</p>
                         <p>902 Followers, 88 Posts</p>
-
                         <p>
                             <img src="https://lh5.googleusercontent.com/-AQznZjgfM3E/AAAAAAAAAAI/AAAAAAAAABA/WEPOnkQS_20/s28-c-k-no/photo.jpg"
                                 width="28px" height="28px">
@@ -109,16 +94,13 @@
                 <!--/panel-->
             </div>
             <!--/col-->
-
             <div class="col-sm-4 col-xs-6">
-
                 <div class="panel panel-default">
                     <div class="panel-thumbnail"><img src="//placehold.it/450X250/f16251/444" class="img-responsive">
                     </div>
                     <div class="panel-body">
                         <p class="lead">Social Media</p>
                         <p>19k Followers, 789 Posts</p>
-
                         <p>
                             <img src="https://lh4.googleusercontent.com/-eSs1F2O7N1A/AAAAAAAAAAI/AAAAAAAAAAA/caHwQFv2RqI/s28-c-k-no/photo.jpg"
                                 width="28px" height="28px">
@@ -128,7 +110,6 @@
                     </div>
                 </div>
                 <!--/panel-->
-
             </div>
             <!--/col-->
         </div>

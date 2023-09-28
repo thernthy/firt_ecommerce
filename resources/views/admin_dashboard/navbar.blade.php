@@ -39,7 +39,7 @@
                 request()->path() == 'products' ||
                 Str::startsWith(request()->path(), 'product/add')||
                 Str::startsWith(request()->path(), 'product/view')||
-                Str::startsWith(request()->path(), '/product/edit')
+                Str::startsWith(request()->path(), 'product/edit')
             )? 
             'route_active' : ''
             }}
@@ -51,8 +51,10 @@
                 <span class="menu-title">Products</span>
             </a>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+        <li class="nav-item menu-items
+            {{(Str::startsWith(request()->path(), 'order'))?'route_active' : ''}}
+        ">
+            <a class="nav-link" href="{{url('order')}}">
                 <span class="menu-icon">
                     <i class="fa-solid fa-cart-flatbed"></i>
                 </span>

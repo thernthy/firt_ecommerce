@@ -9,6 +9,17 @@
 @section('content')
 <div class="content-wrapper">
 <div class="row ">
+  @if(session()->has('message_success'))
+                        <div class="alert_message col-12">
+                        <p class="successFull">{{session()->get('message_success')}}</p>
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+  @elseif(session()->has('message_error'))
+    <div class="alert_message col-12">
+      <p>{{session()->get('message_error')}}</p>
+      <i class="fa-regular fa-circle-xmark"></i>
+    </div>
+  @endif
     <div class="col-12 grid-margin mt-5">
         <div class="card">
             <div class="card-body">
@@ -33,24 +44,26 @@
                           </tr>
                         </thead>
                         <tbody>
+                          @foreach($get_products as $product)
                           <tr>
                             <td>
-                              <img onclick="view_product_img()" src="{{asset('img/myanmar.png')}}" alt="image" />
-                              <span class="pl-2">Henry Klein</span>
+                              <img onclick="view_product_img()" src="{{ asset('products_img/'.$product->photo) }}" alt="image" />
+                              <span class="pl-2">{{$product->name}}</span>
                             </td>
-                            <td> 02312 </td>
-                            <td> $14,500 </td>
-                            <td> Dashboard </td>
-                            <td> Credit card </td>
-                            <td><a href="{{url('product/view')}}"><i class="fa-regular fa-eye"></i></a></td>
+                            <td>{{$product->int_stock}}</td>
+                            <td>$ {{$product->price}}</td>
+                            <td>{{$product->product_cost}}</td>
+                            <td>10</td>
+                            <td><a href="{{url('product/view', $product->slug )}}"><i class="fa-regular fa-eye"></i></a></td>
                             <td>
-                                <a href="#view"><i class="fa-regular fa-pen-to-square edit"></i></a>
+                                <a href="{{url('/product/edit', $product->slug )}}"><i class="fa-regular fa-pen-to-square edit"></i></a>
                             </td>
                             <td>
-                              <a href="#view"><i class="fa-regular fa-trash-can delet"></i></a>
+                              <a href="{{url('product/delete', $product->slug )}}"><i class="fa-regular fa-trash-can delet"></i></a>
                             </td>
                           </tr>
-                          <tr>
+                          @endforeach
+                          <!--<tr>
                             <td>
                               <img onclick="view_product_img()" src="{{asset('img/myanmar.png')}}" alt="image" />
                               <span class="pl-2">Henry Klein</span>
@@ -83,7 +96,7 @@
                             <td>
                               <i class="fa-regular fa-trash-can delet"></i>
                             </td>
-                          </tr>
+                          </tr>-->
                         </tbody>
                       </table>
                     </div>

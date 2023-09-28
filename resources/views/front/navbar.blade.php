@@ -29,8 +29,6 @@
             </div>
         </div>
     </header>
-
-
     <!-- Fixed navbar -->
     <div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
         <div class="container">
@@ -52,9 +50,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Zerow Station</a></li>
-                            <li><a href="#">Craft</a></li>
-                            <li><a href="#">Art</a></li>
+                            @foreach($category_shop as $category)
+                            <li><a href="{{url('shop', $category->catagory_name)}}">{{$category->catagory_name}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     @if(!Auth::user())
@@ -76,6 +74,24 @@
                             @csrf
                             <button type="submit">Log Out</button>
                         </form>
+                    </li>
+                    <li>
+                        <a href="{{url('view/cart')}}"
+                        style="position: relative;"
+                        >
+                        <i class="fa-solid fa-cart-arrow-down"
+                        style="font-size: 1.5rem;"
+                        >
+                        </i>
+                        <span
+                        style="
+                        position: absolute; 
+                        top:5px; 
+                        right:25px; 
+                        color:<?php if($totalCartItems!=0){echo'red';}else{echo'green';}?>;
+                        "
+                        >{{$totalCartItems}}</span>
+                    </a>
                     </li>
                     @endif
                 </ul>

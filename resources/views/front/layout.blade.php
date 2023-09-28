@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 {!! SEO::generate() !!}
-
 <!-- load stylesheets -->
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400">
 <!-- Google web font "Open Sans" -->
@@ -20,9 +19,9 @@
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />  
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
-
 <!-- custom css -->
 <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+<script src="https://kit.fontawesome.com/c49fa14979.js" crossorigin="anonymous"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +34,6 @@
 
 <!-- content -->
 @yield('content')
-
 @include('front.footer')
 <!-- Placed at the end of the document so the pages load faster -->
 @include('front.scripts')
