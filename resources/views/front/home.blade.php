@@ -8,13 +8,12 @@
 <div id="wrap">
 @include('front.navbar')
     <!-- Begin page content -->
-    <div class="divider" id="section1"></div>
+    <div class="divider" id="home"></div>
     <div class="container">
         <div class="col-sm-10 col-sm-offset-1">
             <div class="page-header text-center">
                 <h1>Sticky Footer with Fly-in Navbar</h1>
             </div>
-
             <p class="lead text-center">
                 Twitter Bootstrap is a front-end toolkit to rapidly build web applications.
             </p>
@@ -29,11 +28,6 @@
         </div>
     </div>
     <div class="divider" id="section2"></div>
-    <section class="bg-1">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-            <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Try and Tweak Different Layouts</h2>
-        </div>
-    </section>
     <div class="divider"></div>
 
     <div class="container" id="section3">
@@ -54,64 +48,59 @@
         <!--/col-->
     </div>
     <!--/container-->
-    <div class="divider"></div>
-    <section class="bg-3" id="section4">
-        <div class="col-sm-6 col-sm-offset-3 text-center">
-            <h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Leverage Snippets &amp; Examples</h2>
-        </div>
-    </section>
-    <div class="continer bg-4">
-        <div class="row">
-            <div class="col-sm-4 col-xs-6">
-                <div class="panel panel-default">
-                    <div><img src="//placehold.it/450X250/565656/eee" class="img-responsive"></div>
-                    <div class="panel-body">
-                        <p class="lead">Hacker News</p>
-                        <p>120k Followers, 900 Posts</p>
-
-                        <p>
-                            <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg"
-                                width="28px" height="28px">
-                        </p>
-                    </div>
-                </div>
-                <!--/panel-->
-            </div>
-            <!--/col-->
-            <div class="col-sm-4 col-xs-6">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail"><img src="//placehold.it/450X250/ffcc33/444" class="img-responsive">
-                    </div>
-                    <div class="panel-body">
-                        <p class="lead">Bootstrap Templates</p>
-                        <p>902 Followers, 88 Posts</p>
-                        <p>
-                            <img src="https://lh5.googleusercontent.com/-AQznZjgfM3E/AAAAAAAAAAI/AAAAAAAAABA/WEPOnkQS_20/s28-c-k-no/photo.jpg"
-                                width="28px" height="28px">
-                        </p>
-                    </div>
-                </div>
-                <!--/panel-->
-            </div>
-            <!--/col-->
-            <div class="col-sm-4 col-xs-6">
-                <div class="panel panel-default">
-                    <div class="panel-thumbnail"><img src="//placehold.it/450X250/f16251/444" class="img-responsive">
-                    </div>
-                    <div class="panel-body">
-                        <p class="lead">Social Media</p>
-                        <p>19k Followers, 789 Posts</p>
-                        <p>
-                            <img src="https://lh4.googleusercontent.com/-eSs1F2O7N1A/AAAAAAAAAAI/AAAAAAAAAAA/caHwQFv2RqI/s28-c-k-no/photo.jpg"
-                                width="28px" height="28px">
-                            <img src="https://lh4.googleusercontent.com/-9Yw2jNffJlE/AAAAAAAAAAI/AAAAAAAAAAA/u3WcFXvK-g8/s28-c-k-no/photo.jpg"
-                                width="28px" height="28px">
-                        </p>
-                    </div>
-                </div>
-                <!--/panel-->
-            </div>
-            <!--/col-->
+<hr>
+    <div class="container">
+    <h1 class="text-center mb-3">Where In The World?</h1>
+        <div class="row new_feed_post">
+            <div class="news_cart"
+                style="background-image: url({{asset('img/default.jpg')}});">
+                <a href="">
+                    <div class="news_article">
+                        <strong>
+                            <span><i class="fa-regular fa-calendar"></i></span>
+                            17/June/2030<br>
+                            <span><i class="fa-regular fa-clock"></i></span>
+                            10:00
+                        </strong>
+                        <h4>
+                            News title
+                        </h4>
+                        <br>
+                        <h3>
+                            $ 10
+                        </h3>
+                 </div></a>
+            </div>  
+            <div class="news_cart"
+                style="background-image: url({{asset('img/default.jpg')}});">
+                <a href="">
+                    <div class="news_article">
+                        <strong>
+                            <span><i class="fa-regular fa-calendar"></i></span>
+                            17/June/2030<br>
+                            <span><i class="fa-regular fa-clock"></i></span>
+                            10:00
+                        </strong>
+                        <h4>
+                            News title
+                        </h4>
+                 </div></a>
+            </div>  
+            <div class="news_cart"
+                style="background-image: url({{asset('img/default.jpg')}});">
+                <a href="">
+                    <div class="news_article">
+                        <strong>
+                            <span><i class="fa-regular fa-calendar"></i></span>
+                            17/June/2030<br>
+                            <span><i class="fa-regular fa-clock"></i></span>
+                            10:00
+                        </strong>
+                        <h4>
+                            News title
+                        </h4>
+                 </div></a>
+            </div>  
         </div>
         <!--/row-->
     </div>
@@ -122,11 +111,8 @@
     <div class="row">
 
         <h1 class="text-center">Where In The World?</h1>
-
         <div id="map-canvas"></div>
-
         <hr>
-
         <div class="col-sm-8">
 
             <div class="row form-group">
@@ -189,7 +175,9 @@
             <h4>
                 We love templates. We love Bootstrap.
             </h4>
-            <p>Get more free templates like this at the <a href="http://bootply.com">Bootstrap Playground</a>, Bootply.
+            <p>Get more free templates like this at the <a href="http://bootply.com">Bootstrap Playground
+
+            </a>, Bootply.
             </p>
             <hr>
             <ul class="list-inline center-block">
@@ -205,7 +193,7 @@
     <!--/container-->
 
 </div>
-<!--/wrap-->≈
+<!--/wrap-->
 @endsection
 
 @push('scripts')
@@ -217,42 +205,19 @@
             }
         });
 
-        /* highlight the top nav as scrolling occurs */
-        $('body').scrollspy({
-            target: '#nav'
-        })
 
-        /* smooth scrolling for scroll to top */
-        $('.scroll-top').click(function () {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 1000);
-        })
-
-        /* smooth scrolling for nav sections */
-        $('#nav .navbar-nav li>a').click(function () {
-            var link = $(this).attr('href');
-            var posi = $(link).offset().top + 20;
-            $('body,html').animate({
-                scrollTop: posi
-            }, 700);
-        })
-
-        /* google maps */
-
-        // enable the visual refresh
         google.maps.visualRefresh = true;
-
+        
         var map;
 
-        function initialize() {
+
+        /*function initialize() {
             var mapOptions = {
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById('map-canvas'),
                 mapOptions);
-            // try HTML5 geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var pos = new google.maps.LatLng(position.coords.latitude,
@@ -291,6 +256,6 @@
             map.setCenter(options.position);
         }
         google.maps.event.addDomListener(window, 'load', initialize);
-
+       */
     </script>
 @endpush

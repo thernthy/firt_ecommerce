@@ -33,12 +33,13 @@ Route::post('/add/product', 'productController@postProduct')->name('addProduct')
 Route::get('/product/edit/{slug}', 'productController@edit_product_view');
 Route::post('psaveedite/{slug}', 'productController@saveEdit')->name('psaveedite');
 Route::get('product/delete/{id}', 'productController@deletProduct');
-
+//route home products view
+Route::get('shop/{category}', 'HomeController@viewShop')->name('shop.category');
+Route::get('shop/view/{slug}', 'HomeController@product_view');
 //order route
 Route::get('order', 'orderController@orderIndex');
 
 //user routing user shoping 
-Route::get('shop/{category}', 'HomeController@viewShop')->name('shop.category');
 Route::post('add_to_cart/{slug}', 'HomeController@addcart')->name('cart.add');
 Route::get('view/cart', 'Homecontroller@viewCart')->name('view.cart');
 Route::post('update_cart_amout/{cart_id}', 'HomeController@update_cart_amout')->name('update_cart_amout');
@@ -46,6 +47,8 @@ Route::post('decreased_cart_item/{cart_id}', 'HomeController@decreased_cart_item
 Route::get('cart/delet/{cart_id}', 'Homecontroller@deleteCart')->name('cart.delet');
 Route::get('view/cart=checkout', 'HomeController@checkout');
 Route::post('comfirm_order', 'HomeController@comfirmOrder')->name('comfirm_order');
+
+
 
 // Route::get('/about', 'HomeController@about');
 // Route::get('/contact', 'HomeController@contact');

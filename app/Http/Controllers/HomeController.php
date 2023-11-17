@@ -59,7 +59,7 @@ class HomeController extends Controller
           return view('front.home', compact('category_shop', 'totalCartItems'));
         }
     }
-    public function viewShop($shop_category){
+  public function viewShop($shop_category){
       $category_name = urldecode($shop_category);
       $category_shop = DB::table('catagory')
           ->select('catagory_name')
@@ -77,7 +77,24 @@ class HomeController extends Controller
           ->sum('cart_items.quantity');
         return view('front.view_shop', compact('shop_category', 'category_shop', 'products', 'totalCartItems'));
   }
-  public function addcart($slug)
+  public function  product_view($slug)
+  {
+    $category_shop = DB::table('catagory')
+    ->select('catagory_name')
+    ->orderByRaw('catagory_name DESC')
+    ->get();
+    $target_product = DB::table('products')
+    ->select()
+    ->where('products.slug', $slug)
+    ->first();
+          $totalCartItems = DB::table('cart_items')
+          ->join('carts', 'cart_items.cart_id', '=', 'carts.id')
+          ->where('carts.user_id', auth()->id())
+          ->sum('cart_items.quantity');
+    return view('front.product_view', compact('target_product','category_shop','totalCartItems'));
+  }
+
+  public function addcart($slug, Request $request)
   {
       if (!auth()->check()) {
           return view('auth.login');
@@ -87,27 +104,57 @@ class HomeController extends Controller
           return redirect()->back()->with('error', 'Product not found.');
       }
       $user_id = auth()->id();
-      $existingCartItem = Cart::where('user_id', $user_id)
-          ->where('product_id', $product->product_id)
-          ->first();
-      if ($existingCartItem) {
-          return redirect()->route('view.cart')->with('message_success', '
-          Product already exists in your cart you can add more quantity on the page
-          ');
+      $quantity = 0;
+      if ($request->has('quanttity')){ 
+          $quantity = intval($request->input('quanttity'));
+          $deleted = DB::table('carts')
+          ->where('product_id', $slug)
+          ->delete();
+        if ($deleted) {
+          $cart = new Cart();
+          $cart->user_id = $user_id;
+          $cart->product_id = $product->product_id;
+          $cart->save();
+          $cartItem = new CartItem();
+          $cartItem->cart_id = $cart->id;
+          $cartItem->product_id = $product->product_id; 
+          $cartItem->price = $product->price; 
+          $cartItem->quantity = $quantity;
+          $cartItem->save();
+        }else{
+          $cart = new Cart();
+          $cart->user_id = $user_id;
+          $cart->product_id = $product->product_id;
+          $cart->save();
+          $cartItem = new CartItem();
+          $cartItem->cart_id = $cart->id;
+          $cartItem->product_id = $product->product_id; 
+          $cartItem->price = $product->price; 
+          $cartItem->quantity = $quantity;
+          $cartItem->save();
+        }
+      }else{
+        $existingCartItem = Cart::where('user_id', $user_id)
+            ->where('product_id', $product->product_id)
+            ->first();
+        if ($existingCartItem) {
+            return redirect()->route('view.cart')->with('message_success', '
+            Product already exists in your cart you can add more quantity on the page
+            ');
+        }
+        $cart = new Cart();
+        $cart->user_id = $user_id;
+        $cart->product_id = $product->product_id;
+        $cart->save();
+        $cartItem = new CartItem();
+        $cartItem->cart_id = $cart->id;
+        $cartItem->product_id = $product->product_id; 
+        $cartItem->price = $product->price; 
+        $cartItem->quantity = $quantity;
+        $cartItem->save();
       }
-      $cart = new Cart();
-      $cart->user_id = $user_id;
-      $cart->product_id = $product->product_id;
-      $cart->save();
-      $cartItem = new CartItem();
-      $cartItem->cart_id = $cart->id;
-      $cartItem->product_id = $product->product_id; 
-      $cartItem->price = $product->price; 
-      $cartItem->quantity = 0; 
-      $cartItem->save();
       return redirect()->back()->with('success', 'Product added to cart.');
   }
-  
   public function viewCart(){
     $category_shop = DB::table('catagory')
     ->select('catagory_name')

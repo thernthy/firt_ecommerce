@@ -41,13 +41,17 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav nav-justified">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#section2">Services</a></li>
-                    <li><a href="#section3">Our Works</a></li>
-                    <li class="active"><a href="#section1"><strong>What We Do</strong></a></li>
-                    <li><a href="#section4">About</a></li>
+                    @if(request()->is('/'))
+                    <li class="insect_list_items active"><a href="#home">Home</a></li>
+                    <li class="insect_list_items "><a href="#section2">Services</a></li>
+                    <li class="insect_list_items "><a href="#section3">Our Works</a></li>
+                    <li class="insect_list_items "><a href="#section1"><strong>What We Do</strong></a></li>
+                    <li class="insect_list_items "><a href="#section4">About</a></li>
+                    @else
+                    <li class="{{request()->is('/')?'active':''}}"><a href="{{url('/')}}">Home</a></li>
+                    @endif
                     <!-- <li><a href="#section5">Contact</a></li> -->
-                    <li class="dropdown">
+                    <li class="dropdown  {{request()->is('shop*')?'active':''}}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products </a>
                         <ul class="dropdown-menu">
                             @foreach($category_shop as $category)
@@ -101,3 +105,26 @@
         <!--/.container -->
     </div>
     <!--/.navbar -->
+    @push('scripts')
+    <script>
+        const links = document.querySelectorAll('.insect_list_items a');
+		links.forEach(link => {
+		link.addEventListener('click', (e) => {
+		e.preventDefault();
+		const targetId = link.getAttribute('href').substring(1); // Remove the "#" character
+		const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                    const menuItems = document.querySelectorAll('.insect_list_items');
+                    menuItems.forEach(item => item.classList.remove('active'));
+                    const parentLi = link.parentElement;
+                    parentLi.classList.add('active');
+            }
+            window.scrollTo({
+					top: targetSection.offsetTop,
+					behavior: 'smooth'
+				});
+        });
+    })
+    </script>
+
+    @endpush
